@@ -29,6 +29,15 @@ const projects = [
     github: '#'
   }
 ]
+const activeProjectIndex = ref(0)
+
+const handleProjectScroll = (e: Event) => {
+  const container = e.target as HTMLElement
+  const maxScroll = container.scrollWidth - container.clientWidth
+  if (maxScroll <= 0) return
+  const progress = container.scrollLeft / maxScroll
+  activeProjectIndex.value = Math.round(progress * (projects.length - 1))
+}
 </script>
 
 <template>
@@ -39,24 +48,29 @@ const projects = [
         <p class="section-subtitle">Some of my recent work.</p>
       </div>
       
-      <div class="projects-grid">
-        <div v-for="project in projects" :key="project.title" class="project-card reveal">
-          <img :src="project.image" :alt="project.title" class="project-image">
-          <div class="project-content">
-            <div class="project-tags">
-              <span v-for="tag in project.tags" :key="tag" class="project-tag">{{ tag }}</span>
-            </div>
-            <h3 class="project-title">{{ project.title }}</h3>
-            <p class="project-description">{{ project.description }}</p>
-            <div class="project-links">
-              <a :href="project.demo" class="project-link" target="_blank">
-                <i class="fa-solid fa-external-link-alt"></i> Live Demo
-              </a>
-              <a :href="project.github" class="project-link" target="_blank">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
+      <div class="projects-slider-container">
+        <div class="projects-grid" @scroll="handleProjectScroll">
+          <div v-for="project in projects" :key="project.title" class="project-card reveal">
+            <img :src="project.image" :alt="project.title" class="project-image">
+            <div class="project-content">
+              <div class="project-tags">
+                <span v-for="tag in project.tags" :key="tag" class="project-tag">{{ tag }}</span>
+              </div>
+              <h3 class="project-title">{{ project.title }}</h3>
+              <p class="project-description">{{ project.description }}</p>
+              <div class="project-links">
+                <a :href="project.demo" class="project-link" target="_blank">
+                  <i class="fa-solid fa-external-link-alt"></i> Live Demo
+                </a>
+                <a :href="project.github" class="project-link" target="_blank">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+              </div>
             </div>
           </div>
+        </div>
+        <div class="slider-dots">
+          <div v-for="(_, index) in projects" :key="index" class="slider-dot" :class="{ active: activeProjectIndex === index }"></div>
         </div>
       </div>
     </div>

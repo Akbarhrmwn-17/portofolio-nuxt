@@ -7,6 +7,15 @@ const stats = [
   { target: 2, label: 'Years Experience' },
   { target: 5, label: 'Tech Stacks' }
 ]
+const activeStatIndex = ref(0)
+
+const handleStatScroll = (e: Event) => {
+  const container = e.target as HTMLElement
+  const maxScroll = container.scrollWidth - container.clientWidth
+  if (maxScroll <= 0) return
+  const progress = container.scrollLeft / maxScroll
+  activeStatIndex.value = Math.round(progress * (stats.length - 1))
+}
 
 onMounted(() => {
   if (!statsRef.value) return
@@ -17,7 +26,8 @@ onMounted(() => {
       statsAnimated.value = true
       const statElements = statsRef.value?.querySelectorAll('.stat-number')
       statElements?.forEach((el) => {
-        animateCounter(el as HTMLElement)
+        const target = parseInt(el.getAttribute('data-target') || '0', 10)
+        animateCounter(el as HTMLElement, target)
       })
       observer.disconnect()
     }
@@ -54,10 +64,15 @@ onMounted(() => {
             When I'm not coding, I'm usually exploring new AI tools, contributing to open-source, or learning the latest advancements in the tech world.
           </p>
           
-          <div class="about-stats" ref="statsRef">
-            <div v-for="(stat, index) in stats" :key="index" class="stat-card">
-              <div class="stat-number" :data-target="stat.target">0</div>
-              <div class="stat-label">{{ stat.label }}</div>
+          <div class="about-stats-container">
+            <div class="about-stats" ref="statsRef" @scroll="handleStatScroll">
+              <div v-for="(stat, index) in stats" :key="index" class="stat-card">
+                <div class="stat-number" :data-target="stat.target">0</div>
+                <div class="stat-label">{{ stat.label }}</div>
+              </div>
+            </div>
+            <div class="slider-dots">
+              <div v-for="(_, index) in stats" :key="index" class="slider-dot" :class="{ active: activeStatIndex === index }"></div>
             </div>
           </div>
         </div>

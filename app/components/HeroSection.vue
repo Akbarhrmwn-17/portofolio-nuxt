@@ -31,12 +31,6 @@ const { typingText } = useTypingAnimation(['Frontend Developer', 'Junior DevOps'
           <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
-      <div class="hero-scroll-indicator">
-        <div class="mouse">
-          <div class="mouse-dot"></div>
-        </div>
-        <span>Scroll Down</span>
-      </div>
     </div>
   </section>
 </template>
