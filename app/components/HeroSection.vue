@@ -25,10 +25,10 @@ const { typingText } = useTypingAnimation(['Frontend Developer', 'Junior DevOps'
           </a>
         </div>
         <div class="hero-social">
-          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/Akbarhrmwn-17" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/akbar-hermawan-819699268" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/akbar.hrmwn?igsh=bTdlaXRxczU4Nnlu" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="mailto:akbarhrmwn74@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
     </div>
