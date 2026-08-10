@@ -2,6 +2,7 @@
 FROM node:22-alpine AS builder
 
 WORKDIR /app
+ENV NUXT_TELEMETRY_DISABLED=1
 COPY package*.json ./
 RUN npm install
 COPY . .
