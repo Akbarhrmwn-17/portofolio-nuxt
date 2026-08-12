@@ -21,6 +21,7 @@ const { addRevealRef } = useScrollReveal()
     <HeroSection />
     <AboutSection />
     <SkillsSection />
+    <JourneySection />
     <ProjectsSection />
     <ContactSection />
     <AppFooter />

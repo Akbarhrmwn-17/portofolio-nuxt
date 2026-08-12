@@ -256,28 +256,32 @@ body {
 /* 7. Navbar */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  margin: 0 auto;
+  max-width: 1100px;
   height: 80px;
   display: flex;
   align-items: center;
   background: transparent;
-  border-bottom: 1px solid transparent;
-  z-index: 1000;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  transition: background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  z-index: 9999;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .navbar.scrolled {
+  height: 70px;
   background: var(--glass-bg);
   backdrop-filter: blur(var(--blur-amount));
   -webkit-backdrop-filter: blur(var(--blur-amount));
-  border-bottom: 1px solid var(--glass-border);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .navbar .container {
+  max-width: 1100px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -331,7 +335,7 @@ body {
 .nav-toggle {
   display: none;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
   cursor: pointer;
   background: none;
   border: none;
@@ -341,14 +345,14 @@ body {
 
 .nav-toggle span {
   display: block;
-  width: 28px;
+  width: 22px;
   height: 2px;
   background-color: var(--text-primary);
   transition: var(--transition);
 }
 
 .nav-toggle.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
 
 .nav-toggle.active span:nth-child(2) {
@@ -356,7 +360,7 @@ body {
 }
 
 .nav-toggle.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* 8. Hero */
@@ -958,6 +962,15 @@ body {
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    height: 70px;
+  }
+  .navbar.scrolled {
+    height: 65px;
+  }
   .nav-links {
     display: none;
   }
@@ -967,21 +980,32 @@ body {
   .nav-links.active {
     display: flex;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(3, 11, 26, 0.95);
-    backdrop-filter: blur(var(--blur-amount));
-    -webkit-backdrop-filter: blur(var(--blur-amount));
+    top: 90px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+    height: auto;
+    padding: 30px 20px;
+    border-radius: 24px;
+    background: rgba(3, 11, 26, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    gap: 40px;
+    gap: 24px;
     z-index: 999;
   }
   .nav-links.active a {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .nav-links.active li:last-child a {
+    border-bottom: none;
   }
   .projects-grid {
     display: flex;

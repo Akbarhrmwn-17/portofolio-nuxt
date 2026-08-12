@@ -8,23 +8,23 @@ const categories = [
 ]
 
 const skills = [
-  { name: 'HTML5', icon: 'fa-brands fa-html5', level: 90, levelText: 'Advanced', category: 'frontend' },
-  { name: 'CSS3', icon: 'fa-brands fa-css3-alt', level: 85, levelText: 'Advanced', category: 'frontend' },
-  { name: 'JavaScript', icon: 'fa-brands fa-js', level: 85, levelText: 'Advanced', category: 'frontend' },
-  { name: 'TypeScript', icon: 'fa-solid fa-code', level: 75, levelText: 'Intermediate', category: 'frontend' },
-  { name: 'Vue.js', icon: 'fa-brands fa-vuejs', level: 80, levelText: 'Advanced', category: 'frontend' },
-  { name: 'Nuxt.js', icon: 'fa-brands fa-vuejs', level: 75, levelText: 'Intermediate', category: 'frontend' },
+  { name: 'HTML5', icon: 'fa-brands fa-html5', level: 50, levelText: 'Intermediate', category: 'frontend' },
+  { name: 'CSS3', icon: 'fa-brands fa-css3-alt', level: 50, levelText: 'Intermediate', category: 'frontend' },
+  { name: 'JavaScript', icon: 'fa-brands fa-js', level: 50, levelText: 'Intermediate', category: 'frontend' },
+  { name: 'TypeScript', icon: 'fa-solid fa-code', level: 50, levelText: 'Intermediate', category: 'frontend' },
+  { name: 'Vue.js', icon: 'fa-brands fa-vuejs', level: 50, levelText: 'Intermediate', category: 'frontend' },
+  { name: 'Nuxt.js', icon: 'fa-brands fa-vuejs', level: 50, levelText: 'Intermediate', category: 'frontend' },
   
-  { name: 'Node.js', icon: 'fa-brands fa-node-js', level: 70, levelText: 'Intermediate', category: 'backend' },
-  { name: 'Python', icon: 'fa-brands fa-python', level: 65, levelText: 'Intermediate', category: 'backend' },
-  { name: 'REST API', icon: 'fa-solid fa-plug', level: 75, levelText: 'Intermediate', category: 'backend' },
-  { name: 'AI/ML', icon: 'fa-solid fa-brain', level: 60, levelText: 'Intermediate', category: 'backend' },
+  { name: 'Node.js', icon: 'fa-brands fa-node-js', level: 50, levelText: 'Intermediate', category: 'backend' },
+  { name: 'Python', icon: 'fa-brands fa-python', level: 50, levelText: 'Intermediate', category: 'backend' },
+  { name: 'REST API', icon: 'fa-solid fa-plug', level: 50, levelText: 'Intermediate', category: 'backend' },
+  { name: 'AI/ML', icon: 'fa-solid fa-brain', level: 50, levelText: 'Intermediate', category: 'backend' },
   
-  { name: 'Git', icon: 'fa-brands fa-git-alt', level: 80, levelText: 'Advanced', category: 'devops' },
-  { name: 'Docker', icon: 'fa-brands fa-docker', level: 65, levelText: 'Intermediate', category: 'devops' },
-  { name: 'Linux', icon: 'fa-brands fa-linux', level: 70, levelText: 'Intermediate', category: 'devops' },
-  { name: 'CI/CD', icon: 'fa-solid fa-rotate', level: 60, levelText: 'Intermediate', category: 'devops' },
-  { name: 'Nginx', icon: 'fa-solid fa-server', level: 60, levelText: 'Intermediate', category: 'devops' }
+  { name: 'Git', icon: 'fa-brands fa-git-alt', level: 50, levelText: 'Intermediate', category: 'devops' },
+  { name: 'Docker', icon: 'fa-brands fa-docker', level: 50, levelText: 'Intermediate', category: 'devops' },
+  { name: 'Linux', icon: 'fa-brands fa-linux', level: 50, levelText: 'Intermediate', category: 'devops' },
+  { name: 'CI/CD', icon: 'fa-solid fa-rotate', level: 50, levelText: 'Intermediate', category: 'devops' },
+  { name: 'Nginx', icon: 'fa-solid fa-server', level: 50, levelText: 'Intermediate', category: 'devops' }
 ]
 
 const filteredSkills = computed(() => {
