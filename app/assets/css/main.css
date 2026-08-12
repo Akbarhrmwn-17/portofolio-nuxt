@@ -141,6 +141,7 @@ body {
   margin-bottom: 16px;
   background: linear-gradient(to right, var(--accent-cyan), var(--accent-blue));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   display: inline-block;
@@ -264,20 +265,18 @@ body {
   height: 80px;
   display: flex;
   align-items: center;
-  background: transparent;
-  border: 1px solid transparent;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur-amount));
+  -webkit-backdrop-filter: blur(var(--blur-amount));
+  border: 1px solid var(--glass-border);
   border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   z-index: 9999;
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .navbar.scrolled {
   height: 70px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--blur-amount));
-  -webkit-backdrop-filter: blur(var(--blur-amount));
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .navbar .container {
@@ -293,6 +292,7 @@ body {
   font-weight: 700;
   background: linear-gradient(to right, var(--accent-cyan), var(--accent-blue));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-decoration: none;
 }
@@ -408,6 +408,7 @@ body {
   display: block;
   background: linear-gradient(to right, var(--accent-cyan), var(--accent-blue));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -570,6 +571,7 @@ body {
   font-weight: 700;
   background: linear-gradient(to right, var(--accent-cyan), var(--accent-blue));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 8px;
   display: block;
